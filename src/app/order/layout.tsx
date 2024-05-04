@@ -6,7 +6,7 @@ import { categoryOrderGetAPI } from "@/api/AdminRequest";
 export default function Layout({ children }: Readonly<{ children: React.ReactNode }>) {
 
     const { data, isLoading, isError } = useQuery({
-        queryKey: ["categories"],
+        queryKey: ["categoriesOrder"],
         queryFn: async () => {
             return await categoryOrderGetAPI();
         }

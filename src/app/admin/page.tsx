@@ -10,7 +10,7 @@ const Admin = () => {
     const queryClient = useQueryClient();
 
     const { data, isLoading, isError } = useQuery({
-        queryKey: ["categories"],
+        queryKey: ["categoriesAdmin"],
         queryFn: async () => {
             return await categoryGetAPI();
         }

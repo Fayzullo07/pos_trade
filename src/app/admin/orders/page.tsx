@@ -1,14 +1,13 @@
 "use client"
 import { chefPatchAPI, ordersAdminGetAPI } from "@/api/AdminRequest";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { NextPage, NextPageContext } from "next";
 import Image from "next/image";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
 
 
-const Orders: NextPage<{ data: any }> = ({ data }) => {
+const Orders = () => {
     const queryClient = useQueryClient();
     const [patchData, setPatchData] = useState({
         isFinished: Boolean,
@@ -16,12 +15,12 @@ const Orders: NextPage<{ data: any }> = ({ data }) => {
         orderNumber: ""
     });
 
-    // const { data, isLoading, isError } = useQuery({
-    //     queryKey: ["ordersAdmin"],
-    //     queryFn: async () => {
-    //         return await ordersAdminGetAPI();
-    //     }
-    // });
+    const { data, isLoading, isError } = useQuery({
+        queryKey: ["ordersAdmin"],
+        queryFn: async () => {
+            return await ordersAdminGetAPI();
+        }
+    });
 
     const mutationPatch = useMutation(
         {
@@ -43,8 +42,8 @@ const Orders: NextPage<{ data: any }> = ({ data }) => {
         })
         mutationPatch.mutate(id);
     }
-    // if (isLoading) return <div>Loading...</div>;
-    // if (isError) return <div>Xatolik yuz berdi...</div>;
+    if (isLoading) return <div>Loading...</div>;
+    if (isError) return <div>Xatolik yuz berdi...</div>;
 
     return (
         <div>
@@ -133,11 +132,4 @@ const Orders: NextPage<{ data: any }> = ({ data }) => {
     )
 }
 
-Orders.getInitialProps = async (context: NextPageContext) => {
-    // Ma'lumotlarni serverdan olish
-    const data: any = await ordersAdminGetAPI();
-
-    // Olingan ma'lumotlarni qaytarish
-    return { data };
-};
 export default Orders;

@@ -11,7 +11,7 @@ const Navbar = () => {
                 <div className="relative flex h-16 justify-between">
                     <div className="flex flex-1 items-stretch justify-start">
                         <Link className="flex flex-shrink-0 items-center" href="/">
-                            Home
+                            HOME
                         </Link>
                     </div>
                     <div className="flex-shrink-0 flex px-2 py-3 items-center space-x-8">

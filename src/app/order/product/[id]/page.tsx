@@ -87,7 +87,7 @@ const Order = ({ params }: { params: any }) => {
             return await productOrderGetAPI({ category: id });
         }
     });
-    let localStorageRandom = "";
+    let localStorageRandom: any = "";
     localStorageRandom = localStorage.getItem('random');
     if (!localStorageRandom) {
         const random_num = getRandomThreeDigitNumber();

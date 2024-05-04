@@ -1,6 +1,6 @@
 import axios from "axios";
 const URL = process.env.BACKEND_API;
-const API = axios.create({ baseURL: URL });
+const API = axios.create({});
 console.log(URL);
 
 
@@ -33,6 +33,11 @@ export const categoryGetOneAPI = async ({ id }: { id: any }) =>
 
 
 // -----------------------------------------ADMIN PRODUCT-----------------------------
+
+// GET
+export const ordersAdminGetAPI = async () =>
+    API.get(`/api/admin/orders`);
+
 
 // GET
 export const productGetAPI = async () =>

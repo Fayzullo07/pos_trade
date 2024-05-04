@@ -12,7 +12,11 @@ export default function Layout({ children }: Readonly<{ children: React.ReactNod
         {
             slug: "/product",
             title: "Product",
-        }
+        },
+        {
+            slug: "/orders",
+            title: "Orders",
+        },
     ]
 
     // const session = await auth();

@@ -1,6 +1,6 @@
 import axios from "axios";
 const URL = process.env.BACKEND_API;
-const API = axios.create({ baseURL: URL });
+const API = axios.create({});
 
 
 // const config = {

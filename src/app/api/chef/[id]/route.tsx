@@ -10,7 +10,7 @@ export const PATCH = async (req: any, { params }: { params: any }) => {
     await connectMongoDB()
 
     try {
-        await OrderNumber.findOneAndUpdate({ orderNumber: orderNumber }, { isFinished, isActive }, { new: true });
+        await OrderNumber.findOneAndUpdate({ orderNumber }, { isFinished, isActive }, { new: true });
 
         await Chef.findByIdAndUpdate(id, {
             isFinished,

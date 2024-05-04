@@ -25,7 +25,7 @@ export const POST = async (req: any) => {
 export const GET = async (req: NextRequest) => {
     await connectMongoDB();
     try {
-        let products = await Product.find({}).populate("category");
+        let products = await Product.find({});
         return NextResponse.json({ products }, { status: 200 })
     } catch (error) {
         return NextResponse.json({ products: [] }, { status: 500 })

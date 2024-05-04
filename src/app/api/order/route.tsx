@@ -12,7 +12,6 @@ export const POST = async (req: any) => {
             orders,
             orderNumber
         });
-        console.log(order);
 
         await OrderNumber.create({
             orderNumber

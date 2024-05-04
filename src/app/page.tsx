@@ -3,18 +3,18 @@ import HomePage from "@/components/HomePage";
 import { auth } from "@/configs/auth";
 // import { redirect } from "next/navigation";
 
-const Home = async () => {
+const Home =  () => {
 
-  const session = await auth()
-  if (session?.user) {
-    session.user = {
-      ...session.user,
-    }
-  }
+  // const session = await auth()
+  // if (session?.user) {
+  //   session.user = {
+  //     ...session.user,
+  //   }
+  // }
   return (
-    <AuthProvider session={session}>
+    // <AuthProvider session={session}>
       <HomePage />
-    </AuthProvider>
+    // </AuthProvider>
   )
 }
 

@@ -28,7 +28,7 @@ const HomePage = () => {
     }
   ]
 
-  const { data: session, status } = useSession()
+  // const { data: session, status } = useSession()
 
   // useEffect(() => {
   //   router.push("/login")
@@ -46,11 +46,11 @@ const HomePage = () => {
       </div>
       <div>
 
-        {status === "loading" ? (
+        {/* {status === "loading" ? (
           <div>Loading...</div>
         ) : (
           <SessionData session={session} />
-        )}
+        )} */}
       </div>
     </div>
   )

@@ -8,7 +8,7 @@ export const POST = async (req: any) => {
     await connectMongoDB()
 
     try {
-        const order = await Chef.create({
+        await Chef.create({
             orders,
             orderNumber
         });

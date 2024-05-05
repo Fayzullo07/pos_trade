@@ -19,7 +19,7 @@ const Chef = () => {
         queryFn: async () => {
             return await chefGetAPI();
         },
-        // refetchInterval: 1000
+        refetchInterval: 2000
     });
 
     const mutationPatch = useMutation(

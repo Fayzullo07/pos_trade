@@ -9,8 +9,8 @@ const Orders = () => {
         queryKey: ["ordersnumbers"],
         queryFn: async () => {
             return await orderNumbersGetAPI();
-        }
-        // refetchInterval: 1000
+        },
+        refetchInterval: 2000
     });
     if (isLoading) return <div>Loading...</div>;
     if (isError) return <div>Xatolik yuz berdi...</div>;

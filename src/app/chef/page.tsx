@@ -49,34 +49,33 @@ const Chef = () => {
             <Container>
                 <div className="mb-5 p-2">
                     {data?.data.map((item: any, i: number) => (
-                        <div key={i} className=" mb-5 border border-blue-500 rounded-md">
-                            <div className="flex justify-between items-center">
-                                <div>
-                                    <b className="p-2 text-2xl">#{item.orderNumber}</b>
+                        <div key={i} className=" mb-5 ">
 
-                                </div>
-                                <div className="flex">
-                                    {item.isActive && (
-                                        <button
-                                            disabled={mutationPatch.isPending}
-                                            onClick={() => {
-                                                PatchData(item._id, item.isFinished, !item.isActive, item.orderNumber)
-                                            }}
-                                            className={`p-2 px-4 border text-base ${!mutationPatch.isPending && "hover:border-red-500 hover:text-red-500"}  `}>{!mutationPatch.isPaused ? "Delete" : "Loading..."}</button>
-                                    )}
-                                    {!item.isFinished && (
-                                        <button
-                                            onClick={() => {
-                                                PatchData(item._id, !item.isFinished, item.isActive, item.orderNumber)
-                                            }}
-                                            disabled={mutationPatch.isPending}
-                                            className={`p-2 px-4 border text-base ${!mutationPatch.isPending && "hover:border-green-500 hover:text-green-500"}  `}>{!mutationPatch.isPaused ? "Finish" : "Loading..."}</button>
-                                    )}
-                                </div>
-                            </div>
-
-                            <table className="min-w-full divide-y divide-gray-200 overflow-x-auto">
+                            <table className="min-w-full divide-y rounded-lg border border-blue-500 divide-gray-200 overflow-x-auto">
                                 <thead className="bg-gray-50">
+                                    <div className="flex justify-between items-center">
+                                        <div>
+                                            <b className="p-2 text-2xl">#{item.orderNumber}</b>
+                                        </div>
+                                        <div className="flex">
+                                            {item.isActive && (
+                                                <button
+                                                    disabled={mutationPatch.isPending}
+                                                    onClick={() => {
+                                                        PatchData(item._id, item.isFinished, !item.isActive, item.orderNumber)
+                                                    }}
+                                                    className={`p-2 px-4 border text-base ${!mutationPatch.isPending && "hover:border-red-500 hover:text-red-500"}  `}>{!mutationPatch.isPaused ? "Delete" : "Loading..."}</button>
+                                            )}
+                                            {!item.isFinished && (
+                                                <button
+                                                    onClick={() => {
+                                                        PatchData(item._id, !item.isFinished, item.isActive, item.orderNumber)
+                                                    }}
+                                                    disabled={mutationPatch.isPending}
+                                                    className={`p-2 px-4 border text-base ${!mutationPatch.isPending && "hover:border-green-500 hover:text-green-500"}  `}>{!mutationPatch.isPaused ? "Finish" : "Loading..."}</button>
+                                            )}
+                                        </div>
+                                    </div>
                                     <tr>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                             Product Photo

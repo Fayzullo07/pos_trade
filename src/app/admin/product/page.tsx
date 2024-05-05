@@ -83,7 +83,7 @@ const Product = () => {
                             </tr>
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                            {data?.data.products.map((item: any, i: number) => (
+                            {data?.data.map((item: any, i: number) => (
                                 <tr key={i} >
                                     <td className="px-6 py-4 whitespace-nowrap">
                                         <div className="flex items-center">

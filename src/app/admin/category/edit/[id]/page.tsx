@@ -41,8 +41,8 @@ const EditCategory = ({ params }: { params: any }) => {
     useEffect(() => {
         if (data) {
             setFormData({
-                name: data.data.category.name,
-                isActive: data.data.category.isActive
+                name: data.data.name,
+                isActive: data.data.isActive
             });
         }
     }, [data]);

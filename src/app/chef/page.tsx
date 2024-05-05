@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
+
 const Chef = () => {
     const [patchData, setPatchData] = useState({
         isFinished: Boolean,
@@ -47,7 +48,7 @@ const Chef = () => {
         <div>
             <Container>
                 <div className="mb-5 p-2">
-                    {data?.data.orders.map((item: any, i: number) => (
+                    {data?.data.map((item: any, i: number) => (
                         <div key={i} className=" mb-5 border border-blue-500 rounded-md">
                             <div className="flex justify-between items-center">
                                 <div>

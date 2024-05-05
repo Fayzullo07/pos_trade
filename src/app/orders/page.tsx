@@ -22,7 +22,7 @@ const Orders = () => {
                     <ScrollArea className="h-[80vh] pt-10">
                         <Container>
                             <div className=" flex flex-wrap gap-4 text-2xl px-10">
-                                {data?.data.order_numbers.map((item: any, i: number) => (
+                                {data?.data.map((item: any, i: number) => (
                                     <div key={i} className={`w-full p-2  px-4 ${item.isFinished && "hidden"} border-4 rounded bg-white `}>{!item.isFinished && item.orderNumber}</div>
                                 ))}
                             </div>
@@ -34,7 +34,7 @@ const Orders = () => {
                     <ScrollArea className="h-[80vh] pt-10">
                         <Container>
                             <div className="flex flex-wrap items-center gap-4 text-2xl px-10">
-                                {data?.data.order_numbers.map((item: any, i: number) => (
+                                {data?.data.map((item: any, i: number) => (
                                     <div key={i} className={`w-full p-2 ${!item.isFinished && "hidden"}  px-4 border-4 rounded bg-white`}>{item.isFinished && item.orderNumber}</div>
                                 ))}
                             </div>

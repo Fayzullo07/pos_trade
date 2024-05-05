@@ -1,5 +1,5 @@
 import axios from "axios";
-const URL = process.env.BACKEND_API;
+const URL = process.env.NEXT_PUBLIC_BACKEND_API;
 const API = axios.create({ baseURL: URL });
 console.log(URL);
 
@@ -13,79 +13,79 @@ console.log(URL);
 // -----------------------------------------ADMIN CATEGORY-----------------------------
 // GET
 export const categoryGetAPI = async () =>
-    API.get(`/api/admin/category`);
+    API.get(`/admin/category`);
 
 // POST
 export const categoryPostAPI = async (data: any) =>
-    API.post(`/api/admin/category`, data);
+    API.post(`/admin/category`, data);
 
 // PUT
 export const categoryPutAPI = async (data: any, id: any) =>
-    API.put(`/api/admin/category/${id}/`, data);
+    API.put(`/admin/category/${id}/`, data);
 
 // DELETE
 export const categoryDeleteAPI = async ({ id }: { id: any }) =>
-    API.delete(`/api/admin/category/${id}/`);
+    API.delete(`/admin/category/${id}/`);
 
 // GET BY ID
 export const categoryGetOneAPI = async ({ id }: { id: any }) =>
-    API.get(`/api/admin/category/${id}/`);
+    API.get(`/admin/category/${id}/`);
 
 
 // -----------------------------------------ADMIN PRODUCT-----------------------------
 
 // GET
 export const ordersAdminGetAPI = async () =>
-    API.get(`/api/admin/orders`);
+    API.get(`/admin/orders`);
 
 
 // GET
 export const productGetAPI = async () =>
-    API.get(`/api/admin/product`);
+    API.get(`/admin/product`);
 
 // POST
 export const productPostAPI = async (data: any) =>
-    API.post(`/api/admin/product`, data);
+    API.post(`/admin/product`, data);
 
 // PUT
 export const productPutAPI = async (data: any, id: any) =>
-    API.put(`/api/admin/product/${id}/`, data);
+    API.put(`/admin/product/${id}/`, data);
 
 // DELETE
 export const productDeleteAPI = async ({ id }: { id: any }) =>
-    API.delete(`/api/admin/product/${id}/`);
+    API.delete(`/admin/product/${id}/`);
 
 // GET BY ID
 export const productGetOneAPI = async ({ id }: { id: any }) =>
-    API.get(`/api/admin/product/${id}/`);
+    API.get(`/admin/product/${id}/`);
 
 // -----------------------------------------ORDER PRODUCT-----------------------------
 // GET
 export const productOrderGetAPI = async ({ category }: { category: String }) =>
-    API.get(`/api/order/product/?category=${category}`);
+    API.get(`/menu/product/?category=${category}`);
 
 // -----------------------------------------ORDER CATEGORY-----------------------------
 // GET
 export const categoryOrderGetAPI = async () =>
-    API.get(`/api/order/category`);
+    API.get(`/menu/category`);
 
 // -----------------------------------------ORDER -----------------------------
 // POST
 export const orderPostAPI = async (data: any) =>
-    API.post(`/api/order`, data);
+    API.post(`/menu`, data);
 
 
 // -----------------------------------------CHEF-----------------------------
 // GET
 export const chefGetAPI = async () =>
-    API.get(`/api/chef`);
+    API.get(`/chef`);
 
 // PATCH
 export const chefPatchAPI = async (data: any, id: any) =>
-    API.patch(`/api/chef/${id}/`, data);
+    API.patch(`/chef/${id}/`, data);
 
 // -----------------------------------------ORDER NUMBERS-----------------------------
 // GET
 export const orderNumbersGetAPI = async () =>
-    API.get(`/api/order_numbers`);
+    API.get(`/order_numbers`);
 

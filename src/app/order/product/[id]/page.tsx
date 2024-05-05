@@ -139,7 +139,7 @@ const Order = ({ params }: { params: any }) => {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
                     <div className="col-span-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
-                        {data?.data.products.map((item: any, i: number) => (
+                        {data?.data.map((item: any, i: number) => (
 
                             <div key={i} className="rounded overflow-hidden">
 

@@ -59,11 +59,11 @@ const EditProduct = ({ params }: { params: any }) => {
     useEffect(() => {
         if (data) {
             setFormData({
-                photo: data.data.product.photo,
-                name: data.data.product.name,
-                price: data.data.product.price,
-                category: data.data.product.category,
-                isActive: data.data.product.isActive
+                photo: data.data.photo,
+                name: data.data.name,
+                price: data.data.price,
+                category: data.data.category,
+                isActive: data.data.isActive
             });
         }
     }, [data]);
@@ -163,7 +163,7 @@ const EditProduct = ({ params }: { params: any }) => {
                         }}
                         id="category" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
                         <option value={""}>Choose...</option>
-                        {dataCategory?.data.categories.map((item: any, i: number) => (
+                        {dataCategory?.data.map((item: any, i: number) => (
                             <option key={i} value={item.name}>{item.name}</option>
                         ))}
 
